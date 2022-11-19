@@ -22,7 +22,7 @@ You can find all dependencies in `package.json` file.
 
 - Clone the repo.
 - Open cmd/terminal in Directory file and rune `npm install`.
-- Before starting, you need to export/set these environment variable to values of your own. The variables are: `bosta_jwtPrivateKey`.
+- Before starting, you need to export/set these environment variable to values of your own. The variable is: `jwtPrivateKey`.
 - Using the CMD/Terminal run `nodemon app.js` to keep app running in development mode.
 - You can start experimenting using this link: `http://localhost:3000/`
 - For API documentation, you can navigate to `https://localhost:3000/docs`.
