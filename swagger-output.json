@@ -1,0 +1,461 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "FlapKap Backend Challenge",
+    "description": "Vending Machine Challenge"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "User",
+      "description": "Endpoints"
+    },
+    {
+      "name": "Product",
+      "description": "Endpoints"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/products/create": {
+      "post": {
+        "tags": [
+          "Product"
+        ],
+        "description": "Create new product",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "product",
+            "description": "Product object",
+            "schema": {
+              "$ref": "#/definitions/productDTO"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/products/update/{id}": {
+      "put": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }, {
+            "in": "body",
+            "name": "product",
+            "description": "Product object",
+            "schema": {
+              "$ref": "#/definitions/productDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/products/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/products/get/{id}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/products/get_all": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/register": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "User object",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/users/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "login object",
+            "schema": {
+              "$ref": "#/definitions/loginDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/users/deposite": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "deposite object",
+            "schema": {
+              "$ref": "#/definitions/depositeDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/users/reset": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/buy": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "description": "buy object",
+            "schema": {
+              "$ref": "#/definitions/buyDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/users/logout": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/id/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/{id}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "/api/users/delete": {
+        "tags": [
+          "User"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "productName": {
+          "type": "string",
+          "example": "Mouse"
+        },
+        "amountAvailable": {
+          "type": "number",
+          "example": 50
+        },
+        "cost": {
+          "type": "number",
+          "example": 50
+        },
+        "sellerId": {
+          "type": "number",
+          "example": 875827649081624
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "Jhon Doe"
+        },
+        "password": {
+          "type": "string",
+          "example": "HashedPassword"
+        },
+        "role": {
+          "type": "string",
+          "example": "Seller/Buyer"
+        }
+      }
+    },
+    "productDTO": {
+      "type": "object",
+      "properties": {
+        "productName": {
+          "type": "string",
+          "example": "Mouse"
+        },
+        "cost": {
+          "type": "number",
+          "example": 50
+        },
+        "amountAvailable": {
+          "type": "number",
+          "example": 50
+        }
+      }
+    },
+    "loginDTO": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "Jhon Doe"
+        },
+        "password": {
+          "type": "string",
+          "example": "HashedPassword"
+        }
+      }
+    },
+    "depositeDTO": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "number",
+          "example": "50"
+        }
+      }
+    },
+    "buyDTO": {
+      "type": "object",
+      "properties": {
+        "productId": {
+          "type": "string",
+          "example": "50"
+        },
+        "amountOfProduct": {
+          "type": "number",
+          "example": "50"
+        }
+      }
+    }
+  }
+}
