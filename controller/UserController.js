@@ -75,7 +75,7 @@ const userLogout = async (req, res, next) => {
 
 const depositeAmount = async (req, res, next) => {
     try {
-        const user = await UserService.depositeAmount(req);
+        const {user} = await UserService.depositeAmount(req);
         return res.status(200).send({'Username': `${user.username}`, 'Amount': `${user.deposite}`});
     } catch (error) {
        next(error);
