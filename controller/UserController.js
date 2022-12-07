@@ -84,7 +84,7 @@ const depositeAmount = async (req, res, next) => {
 
 const resetAmount = async (req, res, next) => {
     try {
-        const user = await UserService.resetAmount(req);
+        const {user} = await UserService.resetAmount(req);
         return res.status(200).send({'Username': `${user.username}`, 'Amount': `${user.deposite}`});
     } catch (error) {
         next(error);
