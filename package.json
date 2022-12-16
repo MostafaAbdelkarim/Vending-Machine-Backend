@@ -1,7 +1,7 @@
 {
-  "name": "flapkap",
+  "name": "vendingmachine",
   "version": "1.0.0",
-  "description": "FlapKap Technical Challenge",
+  "description": "Vending Machine Backend API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

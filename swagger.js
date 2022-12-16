@@ -4,8 +4,8 @@ const swaggerAutogen = require('swagger-autogen')()
 const doc = {
     info: {
         version: "1.0.0",
-        title: "FlapKap Backend Challenge",
-        description: "Vending Machine Challenge"
+        title: "Vending Machine Backend API",
+        description: "Vending Machine APIs"
     },
     host: "localhost:3000",
     basePath: "/",

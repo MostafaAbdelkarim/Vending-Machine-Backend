@@ -27,7 +27,7 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 
 app.get('/', (req, res) => {
-    res.send('Hello to FlapKap Backend Challenge');
+    res.send('Hello to Vending Machine Backend API');
 });
 
 console.log(`Application name: ${config.get('name')}`);
