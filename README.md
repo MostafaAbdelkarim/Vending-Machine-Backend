@@ -12,7 +12,6 @@ Backend API based on Nodejs, Express and MongoDB for managing Vending machine th
 - JsonWebToken
 - Mongoose
 - Swagger-Ui-Express
-- Jest
 
 ## Dependencies
 
