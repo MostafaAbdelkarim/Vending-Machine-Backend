@@ -1,4 +1,5 @@
 {
     "name": "Vending Machine Backend API - Default",
-    "jwtPrivateKey": "vendingMachine_jwtPrivateKey_snbfckjasbfkjlbsaljfkbljasbfkljsabfkljsabjhdgvskjahfdgvkhsavfkhsavfkh"
+    "jwtPrivateKey": "vendingMachine_jwtPrivateKey_snbfckjasbfkjlbsaljfkbljasbfkljsabfkljsabjhdgvskjahfdgvkhsavfkhsavfkh",
+    "RemoteDB": "mongodb+srv://mostafaeldahshan:vyc7sLy7tqyxD7n0@cluster0.dfc655s.mongodb.net/?retryWrites=true&w=majority"
 }
